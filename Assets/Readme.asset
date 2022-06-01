@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3525da1cf3a6c14bba95a8934097d57, type: 3}
+  m_Name: Readme
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2800000, guid: 0af430224a0adc54c9f8740a506fd3d1, type: 3}
+  title: Game & User Lab
+  sections:
+  - heading: Arduino i Unity
+    linkText: Download Arduino IDE
+    url: https://www.arduino.cc/en/software
+    text: test text
+  - heading: Licens
+    linkText: Uduino asset store
+    url: https://assetstore.unity.com/packages/tools/input-management/uduino-arduino-communication-simple-fast-and-stable-78402#publisher
+    text: "Dette projekt bruger \"Uduino\" til at l\xE6se inputs, og sende outputs,
+      til og fra en Arduino.  Hvis du \xF8nsker at bruge Uduino til et ikke skole-relateret
+      projekt, skal du k\xF8be en licens p\xE5 linket nedenfor."
+  scenes:
+  - scene:
+      sceneAsset: {fileID: 102900000, guid: e2944de3997f5b440a602a7135889846, type: 3}
+      scenePath: Assets/Scenes/DemoScene.unity
+    name: input basics
+  - scene:
+      sceneAsset: {fileID: 102900000, guid: 206c971a946c03a4caf64abe54a52314, type: 3}
+      scenePath: Assets/Scenes/GameScene.unity
+    name: Spil eksempel
+  loadedLayout: 1
