@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 297acaac13aa32749a33c310b71a503e, type: 3}
-  m_Name: Arduino Input Error
+  m_Name: Ultralyd
   m_EditorClassIdentifier: 
-  selectPin: 19
-  pinMode: 2
-  remapValue: 1
+  selectPin: 0
+  pinMode: 0
+  remapValue: 0
   inputMin: 0
   inputMax: 1023
   newMin: -1
   newMax: 1
+  samePinError: 0

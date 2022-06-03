@@ -57,6 +57,11 @@ public class ReadmeEditor : Editor
     {
         EditorSceneManager.OpenScene(scene);
     }
+    void OpenFile(UnityEngine.Object obj)
+    {
+        //AssetDatabase.LoadAllAssetsAtPath("Assets/CreativeTechLabUduino.ino – Kode.lnk");
+        AssetDatabase.OpenAsset(obj.GetInstanceID());
+    }
 
     static void SelectReadmeAutomatically()
     {
@@ -83,7 +88,7 @@ public class ReadmeEditor : Editor
 
     static CustomReadme SelectReadme()
     {
-        var ids = AssetDatabase.FindAssets("Readme t:Readme");
+        var ids = AssetDatabase.FindAssets("Readme t:CustomReadme");
         if (ids.Length == 1)
         {
             var readmeObject = AssetDatabase.LoadMainAssetAtPath(AssetDatabase.GUIDToAssetPath(ids[0]));
@@ -152,6 +157,14 @@ public class ReadmeEditor : Editor
                 }
             }
 
+            if (!string.IsNullOrEmpty(section.objectText))
+            {
+                EditorGUILayout.Space(10);
+                if (GUILayout.Button(section.objectText, ButtonStyle))
+                {
+                    OpenFile(section.objectToOpen);
+                }
+            }
             GUILayout.Space(k_Space);
         }
 
@@ -166,6 +179,7 @@ public class ReadmeEditor : Editor
 
             GUILayout.Space(k_Space);
         }
+
 
         if (GUILayout.Button("Remove Readme Assets", ButtonStyle))
         {

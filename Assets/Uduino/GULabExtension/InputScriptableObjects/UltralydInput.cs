@@ -22,12 +22,14 @@ namespace GULab
         private string recieved;
         private string lastRecieved;
 
-        public bool samePinError = false;
+        public bool sameTriggerError = false;
+        public bool sameEchoError = false;
 
         private void OnEnable()
         {
             init = false;
-            samePinError = false;
+            sameTriggerError = false;
+            sameEchoError = false;
         }
 
         public void InitTrigger(pinSelect pin)
@@ -36,8 +38,8 @@ namespace GULab
             {
                 if(UduinoManager.Instance.pins[i].currentPin == (int)pin)
                 {
-                    Debug.LogError("Pin " + pin +" is already in use " + this.name);
-                    samePinError = true;
+                    Debug.LogError("Pin " + pin + " is already in use in input: " + this.name);
+                    sameTriggerError = true;
                     init = true;
                     return;
                 }
@@ -53,8 +55,8 @@ namespace GULab
             {
                 if (UduinoManager.Instance.pins[i].currentPin == (int)pin)
                 {
-                    Debug.LogError("Pin " + pin + " is already in use " + this.name);
-                    samePinError = true;
+                    Debug.LogError("Pin " + pin + " is already in use in input: " + this.name);
+                    sameEchoError = true;
                     init = true;
                     return;
                 }
@@ -75,11 +77,15 @@ namespace GULab
             
         }
 
-        void Update()
-        {
-            //test = input.ReadValueAsFloat();
-            
+       
 
+        public IEnumerator SendPulse()
+        {
+            while (init)
+            {
+                
+                yield return new WaitForFixedUpdate();
+            }
         }
 
         void DataRecieved(string data, UduinoDevice board)
@@ -91,14 +97,12 @@ namespace GULab
             }
             else
             {
-                recieved = data;
+                //recieved = data;
             }
         }
 
         private void CheckInit()
         {
-
-
 
             if (!init)
             {
@@ -110,7 +114,17 @@ namespace GULab
             }
         }
 
-       
-      
+        public void RemoveTriggerError()
+        {
+            sameTriggerError = false;
+        }
+
+        public void RemoveEchoError()
+        {
+            sameEchoError = false;
+        }
+
+
+
     }
 }

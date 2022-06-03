@@ -19,12 +19,16 @@ MonoBehaviour:
     linkText: Download Arduino IDE
     url: https://www.arduino.cc/en/software
     text: test text
+    objectText: "\xC5ben Arduino Kode"
+    objectToOpen: {fileID: 102900000, guid: 291b597b4724c7641b95e17bae6a527d, type: 3}
   - heading: Licens
     linkText: Uduino asset store
     url: https://assetstore.unity.com/packages/tools/input-management/uduino-arduino-communication-simple-fast-and-stable-78402#publisher
     text: "Dette projekt bruger \"Uduino\" til at l\xE6se inputs, og sende outputs,
       til og fra en Arduino.  Hvis du \xF8nsker at bruge Uduino til et ikke skole-relateret
       projekt, skal du k\xF8be en licens p\xE5 linket nedenfor."
+    objectText: 
+    objectToOpen: {fileID: 0}
   scenes:
   - scene:
       sceneAsset: {fileID: 102900000, guid: e2944de3997f5b440a602a7135889846, type: 3}

@@ -9,6 +9,8 @@ public class CustomReadme : ScriptableObject
     public Section[] sections;
     public Scenes[] scenes;
     public bool loadedLayout;
+   
+    
 
     [Serializable]
     public class Section
@@ -16,6 +18,8 @@ public class CustomReadme : ScriptableObject
         public string heading, linkText, url;
         [TextArea(3,20)]
         public string text;
+        public string objectText;
+        public UnityEngine.Object objectToOpen;
     }
 
     [Serializable]
