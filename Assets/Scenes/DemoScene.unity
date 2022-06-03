@@ -736,15 +736,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1665178864}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 724b17463ee6ad140b67a5f555b57e24, type: 3}
+  m_Script: {fileID: 11500000, guid: 3415a54c0ccc76047af34e410b93f49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readValue: 0
-  readXValue: 0
-  readValueAsBool: 0
-  yInput: {fileID: 11400000, guid: a54da0140bb7d8749a00bcad39467c37, type: 2}
-  xInput: {fileID: 11400000, guid: a54da0140bb7d8749a00bcad39467c37, type: 2}
-  swInput: {fileID: 11400000, guid: a54da0140bb7d8749a00bcad39467c37, type: 2}
+  test: 
+  input: {fileID: 11400000, guid: 0a738d4f551ee3f4b8b0b30e18d99b56, type: 2}
 --- !u!1 &1693677356
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,7 +979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
       propertyPath: ManagerState
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
       propertyPath: pins.Array.size

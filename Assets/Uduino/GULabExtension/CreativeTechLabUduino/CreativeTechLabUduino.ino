@@ -24,6 +24,9 @@ void setup()
   uduino.addCommand("r", ReadAnalogPin);
   uduino.addCommand("br", BundleReadPin);
   uduino.addCommand("b", ReadBundle);
+
+  uduino.addCommand("p",ReadPulse);
+  
   uduino.addInitFunction(DisconnectAllServos);
   uduino.addDisconnectedFunction(DisconnectAllServos);
 }
@@ -55,6 +58,26 @@ void SetMode() {
     type = atoi(arg);
     PinSetMode(pinToMap, type);
   }
+}
+
+void ReadPulse(){
+  int trigPin = atoi(uduino.getParameter(0));
+  int echoPin = atoi(uduino.getParameter(1));
+  pinMode(trigPin, OUTPUT); 
+  pinMode(echoPin, INPUT); 
+  float duration, distance; 
+
+  digitalWrite(trigPin, LOW); 
+  delayMicroseconds(2); 
+  digitalWrite(trigPin, HIGH); 
+  delayMicroseconds(10); 
+  digitalWrite(trigPin, LOW ); 
+  duration = pulseIn(echoPin, HIGH); 
+  distance = (duration*.0343)/2; 
+  
+  printValue(echoPin, distance);
+  //delay(100); 
+  
 }
 
 void PinSetMode(int pin, int type) {
