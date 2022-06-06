@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using GULab;
 using Uduino;
 
-public class GUTest : MonoBehaviour
+public class ReadUltrasound : MonoBehaviour
 {
     public float test;
     public Slider slider;

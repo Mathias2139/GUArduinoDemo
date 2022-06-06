@@ -154,16 +154,7 @@ namespace GULab
             UduinoManager.Instance.pinMode((int)pin, Uduino.PinMode.Input);
             init = true;
         }
-        public string ReadOutput()
-        {
-
-            CheckInit();
-
-            UduinoManager.Instance.sendCommand("p", (int)triggerPin, (int)echoPin);
-
-            return recieved;
-
-        }
+       
 
         void DataRecieved(string data, UduinoDevice board)
         {
